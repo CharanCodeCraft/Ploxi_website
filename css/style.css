@@ -77,10 +77,14 @@
 
 
 /*** Navbar ***/
+
+
+
+
 .navbar .navbar-nav .nav-link {
     position: relative;
     margin-left: 25px;
-    padding: 35px 0;
+    padding: 50px 0;
     color: #000000;
     font-weight: 500;
     outline: none;
@@ -91,11 +95,6 @@
 .navbar .navbar-nav .nav-link.active {
     color: black;
 }
-.navbar .top .top-link:hover,
-.navbar .top .top-link.active {
-    color: black;
-}
-
 
 .sticky-top.navbar .navbar-nav .nav-link {
     padding: 20px 0;
@@ -112,12 +111,12 @@
 }
 
 .navbar .navbar-brand img {
-    max-height: 60px;
     transition: .5s;
 }
 
 .sticky-top.navbar .navbar-brand img {
-    max-height: 45px;
+    max-height: 60px;
+    max-width: 60px;
 }
 
 @media (max-width: 991.98px) {
@@ -174,7 +173,7 @@
         height: 2px;
         bottom: 10px;
         left: 0;
-        background: #FFFFFF;
+        background: black;
         opacity: 0;
         transition: .5s;
     }
@@ -215,6 +214,9 @@
         opacity: 1;
     }
 }
+
+
+
 
 
 /*** Hero Header ***/
