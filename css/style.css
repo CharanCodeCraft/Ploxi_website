@@ -81,7 +81,7 @@
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    color: #FFFFFF;
+    color: #000000;
     font-weight: 500;
     outline: none;
     transition: .5s;
@@ -89,8 +89,13 @@
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: #FFFFFF;
+    color: black;
 }
+.navbar .top .top-link:hover,
+.navbar .top .top-link.active {
+    color: black;
+}
+
 
 .sticky-top.navbar .navbar-nav .nav-link {
     padding: 20px 0;
