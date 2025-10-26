@@ -98,3 +98,28 @@
     
 })(jQuery);
 
+new svgMap({
+  targetElementID: 'svgMap',
+  
+  // Color scheme - YOUR REQUIREMENTS
+  colorMax: '#F00001',        // Red for highest values (highlighted regions)
+  colorMin: '#F00001',        // Same red to ensure consistent highlighting
+  colorNoData: '#7798BA',     // Blue-gray for non-highlighted countries
+  
+  // Your operating regions data
+  data: {
+    data: {
+      presence: {
+        name: 'Our Presence',
+        format: '{0} Offices',
+        thousandSeparator: ','
+      }
+    },
+    applyData: 'presence',
+    values: {
+      IN: {presence: 3, offices: 3, projects: 15, cities: 'Mumbai, Delhi, Bangalore'},  // India
+      AU: {presence: 2, offices: 2, projects: 8, cities: 'Sydney, Melbourne'},          // Australia
+      AE: {presence: 1, offices: 1, projects: 5, cities: 'Dubai'}                       // UAE
+    }
+  }
+});
