@@ -6812,7 +6812,7 @@ fieldset:disabled .btn {
   color: #0e2e50 !important;
 }
 .text-white {
-  color: #fff !important;
+  color: #000 !important;
 }
 .text-body {
   color: #666565 !important;
@@ -6851,10 +6851,10 @@ fieldset:disabled .btn {
   background-color: #f3f6f8 !important;
 }
 .bg-dark {
-  background: linear-gradient(90deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%); 
+  background: linear-gradient(to bottom right, #f0fdf4, #eff6ff, #eef2ff) !important; 
 }
 .bg-dark-btn{
-  background: linear-gradient(135deg, #00b98e 0%, #00755c 100%) !important;;
+  background: var(--bs-green) !important;
 }
 .bg-darker {
   background-color: #000000 !important; 

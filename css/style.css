@@ -562,7 +562,7 @@
 
 .team-item:hover::before,
 .team-item:hover::after {
-    background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%) !important;
+     background: linear-gradient(to bottom right, #f0fdf4, #eff6ff, #eef2ff) !important;
     transition: 0.5s;
 }
 
@@ -578,7 +578,7 @@
 
 .team-item img {
     padding: 15px;
-    background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%) !important;
+     background: linear-gradient(to bottom right, #f0fdf4, #eff6ff, #eef2ff) !important;
 }
 
 
