@@ -8,39 +8,205 @@
 
 /* Greenish map theme */
 .svgMap-map-wrapper {
-  background: #e8f5f1 !important;  /* Light greenish background */
+  background: #e8f5f1 !important;
+  position: relative !important;
 }
 
-/* All countries - Greenish with WHITE borders */
 .svgMap-country {
-  fill: #b8e6d5 !important;  /* Light teal green */
+  fill: #b8e6d5 !important;
   stroke: #ffffff !important;
   stroke-width: 1.5 !important;
-  transition: fill 0.3s ease;
 }
 
-/* Remove hover effect on countries */
 .svgMap-country:hover {
   fill: #b8e6d5 !important;
   cursor: default !important;
 }
 
-/* Hide default tooltips */
-.svgMap-tooltip {
+/* Hide default tooltips and zoom buttons */
+.svgMap-tooltip,
+.svgMap-map-controls-wrapper {
   display: none !important;
 }
 
-/* Custom Location Pin Styling */
+/* Custom Location Pins */
 .location-pin {
   cursor: pointer;
   z-index: 100;
   transition: transform 0.3s ease;
-  transform-origin: bottom center;
 }
 
 .location-pin:hover {
-  transform: scale(1.4) translate
+  z-index: 1000;
+  transform: translate(-50%, -100%) scale(1.2) !important;
 }
+
+/* Pin Marker with Image */
+.pin-wrapper {
+  position: relative;
+}
+
+.pin-marker {
+  width: 50px;
+  height: 65px;
+  position: relative;
+  filter: drop-shadow(0 5px 10px rgba(255, 69, 13, 0.4));
+  transition: filter 0.3s ease;
+}
+
+.location-pin:hover .pin-marker {
+  filter: drop-shadow(0 8px 20px rgba(255, 69, 13, 0.6));
+}
+
+/* Pin shape with image inside */
+.pin-marker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: #ff450d;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 3px solid white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pin-marker::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 15px solid #ff450d;
+}
+
+.pin-image {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 10;
+  border: 2px solid white;
+}
+
+/* Pulsing animation */
+.pin-marker::before {
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 69, 13, 0.7);
+  }
+  50% {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 0 0 15px rgba(255, 69, 13, 0);
+  }
+}
+
+/* Tooltip - HIDDEN by default */
+.pin-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff450d;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+  min-width: 200px;
+  margin-bottom: 10px;
+}
+
+.pin-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: white;
+}
+
+/* Show tooltip on hover */
+.location-pin:hover .pin-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-20px);
+}
+
+.pin-tooltip strong {
+  color: #ff450d;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pin-tooltip small {
+  color: #0E2E50;
+  display: block;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pin-marker {
+    width: 40px;
+    height: 52px;
+  }
+  
+  .pin-marker::before {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .pin-image {
+    width: 28px;
+    height: 28px;
+    top: 6px;
+    left: 6px;
+  }
+  
+  .pin-tooltip {
+    font-size: 12px;
+    min-width: 160px;
+    padding: 10px 14px;
+  }
+}
+
+.pin-tooltip {
+  padding: 5px 8px;  /* Very tight padding */
+  line-height: 1.1;
+}
+
+.pin-tooltip strong {
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+
+.pin-tooltip small {
+  line-height: 1;
+  margin: 1px 0;
+  font-size: 12px;
+}
+
+
 
 #spinner {
     opacity: 0;

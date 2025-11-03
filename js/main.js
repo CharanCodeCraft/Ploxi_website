@@ -98,24 +98,83 @@
     
 })(jQuery);
 
-// Initialize map with greenish theme
+// Initialize static map (no zoom)
 new svgMap({
   targetElementID: 'svgMap',
   
   // Greenish color scheme
-  colorMax: '#b8e6d5',        // Light green
-  colorMin: '#e8f5f1',        // Very light green
-  colorNoData: '#d4ebe5',     // Pale green for all countries
+  colorMax: '#b8e6d5',
+  colorMin: '#e8f5f1',
+  colorNoData: '#d4ebe5',
   
-  // Minimal data (we're using custom pins instead)
+  // DISABLE zoom
+  mouseWheelZoomEnabled: false,
+  
   data: {
     data: {
-      presence: {
-        name: '',
-        format: '',
-      }
+      presence: { name: '', format: '' }
     },
     applyData: 'presence',
-    values: {}  // Empty - no country coloring
+    values: {}
   }
 });
+
+// Add custom pins after map loads
+setTimeout(function() {
+  const mapWrapper = document.querySelector('#svgMap');
+  
+  // Pin data
+  const pins = [
+    {
+      top: '42%', left: '72%',
+      country: 'India',
+      image: 'img/blog-4.png',
+      offices: 3,
+      projects: 15,
+      cities: 'Mumbai, Delhi, Bangalore'
+    },
+    {
+      top: '76%', left: '85%',
+      country: 'Australia',
+      image: 'img/blog-3.png',
+      offices: 2,
+      projects: 8,
+      cities: 'Sydney, Melbourne'
+    },
+    {
+      top: '40%', left: '60%',
+      country: 'UAE',
+      image: 'img/blog-2.png',
+      offices: 1,
+      projects: 5,
+      cities: 'Dubai'
+    }
+  ];
+  
+  pins.forEach(function(pin) {
+    // Create pin container
+    const pinDiv = document.createElement('div');
+    pinDiv.className = 'location-pin';
+    pinDiv.style.position = 'absolute';
+    pinDiv.style.top = pin.top;
+    pinDiv.style.left = pin.left;
+    pinDiv.style.transform = 'translate(-50%, -100%)';
+    
+    // Pin HTML
+    pinDiv.innerHTML = `
+      <div class="pin-wrapper">
+        <div class="pin-marker">
+          <img src="${pin.image}" alt="${pin.country}" class="pin-image">
+        </div>
+        <div class="pin-tooltip">
+          <strong>${pin.country}</strong><br>
+          <small>${pin.offices} Offices | ${pin.projects} Projects</small><br>
+          <small>${pin.cities}</small>
+        </div>
+      </div>
+    `;
+    
+    mapWrapper.appendChild(pinDiv);
+  });
+}, 500);
+

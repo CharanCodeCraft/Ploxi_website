@@ -507,64 +507,14 @@
     <h2 class="text-center fw-bold" style="color: #0E2E50; font-size: 2.5rem;">
       Operating Regions
     </h2>
-    <!-- Info Text -->
     <div class="text-center mb-5">
-      <p class="text-muted">Click on location pins to see details</p>
+      <p class="text-muted">Hover over pins to see project details</p>
     </div>
     
-    <!-- Map Container with Custom Pins -->
-    <div class="position-relative" style="min-height: 500px; border-radius: 15px; overflow: hidden;">
-      <div id="svgMap" style="min-height: 500px;"></div>
-      
-      <!-- Custom Location Pins -->
-      <!-- India Pin -->
-      <div class="location-pin" style="position: absolute; top: 42%; left: 67%;" data-country="India">
-        <div class="pin-icon">
-          <svg width="40" height="50" viewBox="0 0 24 36" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12zm0 16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" 
-                  fill="#ff450d" stroke="#fff" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="pin-tooltip">
-          <strong>India</strong><br>
-          <small>3 Offices | 15 Projects</small><br>
-          <small>Mumbai, Delhi, Bangalore</small>
-        </div>
-      </div>
-
-      <!-- Australia Pin -->
-      <div class="location-pin" style="position: absolute; top: 76%; left: 82%;" data-country="Australia">
-        <div class="pin-icon">
-          <svg width="40" height="50" viewBox="0 0 24 36" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12zm0 16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" 
-                  fill="#ff450d" stroke="#fff" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="pin-tooltip">
-          <strong>Australia</strong><br>
-          <small>2 Offices | 8 Projects</small><br>
-          <small>Sydney, Melbourne</small>
-        </div>
-      </div>
-
-      <!-- UAE Pin -->
-      <div class="location-pin" style="position: absolute; top: 40%; left: 58%;" data-country="UAE">
-        <div class="pin-icon">
-          <svg width="40" height="50" viewBox="0 0 24 36" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12zm0 16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" 
-                  fill="#ff450d" stroke="#fff" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="pin-tooltip">
-          <strong>UAE</strong><br>
-          <small>1 Office | 5 Projects</small><br>
-          <small>Dubai</small>
-        </div>
-      </div>
-    </div>
+    <!-- Map Container -->
+    <div id="svgMap" style="min-height: 500px; border-radius: 15px; overflow: hidden;"></div>
   </div>
 </div>
-
       <!-- blog Start -->
       <div class="container-xxl py-5">
         <div class="container wow fadeInUp" data-wow-delay="0.1s">
