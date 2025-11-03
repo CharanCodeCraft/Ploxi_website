@@ -37,7 +37,40 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+     <style>
+        .tooltip-wrapper {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .tooltip-wrapper:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 10px;
+            padding: 8px 12px;
+            background-color: #16A34A;
+            color: white;
+            border-radius: 6px;
+            white-space: nowrap;
+            z-index: 1000;
+            font-size: 14px;
+        }
+
+        .tooltip-wrapper:hover::before {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 10px;
+            margin-left: 4px;
+            border: 5px solid transparent;
+            border-right-color: #16A34A;
+        }
+    </style>
   </head>
+  
 
   <body>
     <div class="container-xxl bg-white p-0">
@@ -209,203 +242,141 @@
       </div>
       <!-- Service End -->
 
-      <!-- Testimonial Start -->
-      <div class="container-xxl py-2">
-        <div class="container py-5 wow fadeInUp">
-          <!-- Corporate & Industrial Section -->
-          <div class="row mb-5 align-items-center">
+<div class="container-xxl py-2">
+    <div class="container py-5 wow fadeInUp">
+        
+        <!-- Clean Tech Section -->
+        <div class="row mb-5 align-items-center">
             <!-- Circular Image -->
             <div class="col-lg-3 text-center mb-4 mb-lg-0">
-              <img
-                src="img/corporate-img.png"
-                alt="Clean Tech"
-                class="rounded-circle img-fluid"
-                style="width: 200px; height: 200px; object-fit: cover"
-              />
+                <img src="img/clean-tech.png" alt="Climate Finance" class="rounded-circle img-fluid"
+                    style="width: 200px; height: 200px; object-fit: cover"/>
             </div>
 
             <!-- Services List -->
             <div class="col-lg-9">
-              <h2 class="fw-bold mb-4" style="color: var(--bs-dark)">
-                Corporate & Industrial Sustainability Services
-              </h2>
-              <ul class="list-unstyled">
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >1</span
-                  >
-                  <span class="fs-5">Sustainability Strategy</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >2</span
-                  >
-                  <span class="fs-5 text-black">Audit & Compliance</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >3</span
-                  >
-                  <span class="fs-5">Decarbonization Support</span>
-                </li>
-              </ul>
+                <h2 class="fw-bold mb-4" style="color: var(--bs-dark)">
+                    Consulting Services for Clean Tech Firms
+                </h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">1</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Strategic planning and market expansion guidance for sustainable growth">
+                            Business Growth & Strategy
+                        </span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">2</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Expert guidance on mergers, acquisitions, and investment deals">
+                            Transaction Advisory
+                        </span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">3</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Optimize processes and enhance operational efficiency">
+                            Operational Improvement
+                        </span>
+                    </li>
+                </ul>
             </div>
-          </div>
-
-          <!-- Climate Finance Section -->
-          <div class="row mb-5 align-items-center">
-            <!-- Circular Image -->
-            <div class="col-lg-3 text-center mb-4 mb-lg-0">
-              <img
-                src="img/climate-fin.png"
-                alt="Corporate & Industrial"
-                class="rounded-circle img-fluid"
-                style="width: 200px; height: 200px; object-fit: cover"
-              />
-            </div>
-
-            <!-- Services List -->
-            <div class="col-lg-9">
-              <h2 class="fw-bold mb-4" style="color: var(--bs-dark)">
-                Climate Finance Services for Investors
-              </h2>
-              <ul class="list-unstyled">
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >1</span
-                  >
-                  <span class="fs-5">Clean Tech Incubators</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >2</span
-                  >
-                  <span class="fs-5">Climate Finance Structuring</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >3</span
-                  >
-                  <span class="fs-5">ESG Risk & Reporting</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Clean Tech Section -->
-          <div class="row mb-5 align-items-center">
-            <!-- Circular Image -->
-            <div class="col-lg-3 text-center mb-4 mb-lg-0">
-              <img
-                src="img/clean-tech.png"
-                alt="Climate Finance"
-                class="rounded-circle img-fluid"
-                style="width: 200px; height: 200px; object-fit: cover"
-              />
-            </div>
-
-            <!-- Services List -->
-            <div class="col-lg-9">
-              <h2 class="fw-bold mb-4" style="color: var(--bs-dark)">
-                Consulting Services for Clean Tech Firms
-              </h2>
-              <ul class="list-unstyled">
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >1</span
-                  >
-                  <span class="fs-5">Business Growth & Strategy</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >2</span
-                  >
-                  <span class="fs-5">Transaction Advisory</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <span
-                    class="badge bg-secondary rounded-circle me-3"
-                    style="
-                      width: 30px;
-                      height: 30px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
-                    >3</span
-                  >
-                  <span class="fs-5">Operational Improvement</span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- Testimonial End -->
+
+        <!-- Corporate & Industrial Section -->
+        <div class="row mb-5 align-items-center">
+            <!-- Circular Image -->
+            <div class="col-lg-3 text-center mb-4 mb-lg-0">
+                <img src="img/corporate-img.png" alt="Clean Tech" class="rounded-circle img-fluid"
+                    style="width: 200px; height: 200px; object-fit: cover"/>
+            </div>
+
+            <!-- Services List -->
+            <div class="col-lg-9">
+                <h2 class="fw-bold mb-4" style="color: var(--bs-dark)">
+                    Corporate & Industrial Sustainability Services
+                </h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">1</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Develop comprehensive roadmaps for achieving sustainability goals">
+                            Sustainability Strategy
+                        </span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">2</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Ensure regulatory compliance and ESG reporting standards">
+                            Audit & Compliance
+                        </span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">3</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Practical solutions to reduce carbon emissions and reach net-zero">
+                            Decarbonization Support
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Climate Finance Section -->
+        <div class="row mb-5 align-items-center">
+            <!-- Circular Image -->
+            <div class="col-lg-3 text-center mb-4 mb-lg-0">
+                <img src="img/climate-fin.png" alt="Corporate & Industrial" class="rounded-circle img-fluid"
+                    style="width: 200px; height: 200px; object-fit: cover"/>
+            </div>
+
+            <!-- Services List -->
+            <div class="col-lg-9">
+                <h2 class="fw-bold mb-4" style="color: var(--bs-dark)">
+                    Climate Finance Services for Investors
+                </h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">1</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Support early-stage clean tech companies with innovation programs">
+                            Clean Tech Incubators
+                        </span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">2</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Design and implement effective climate finance mechanisms">
+                            Climate Finance Structuring
+                        </span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                        <span class="badge rounded-circle me-3"
+                            style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background-color: #16A34A;">3</span>
+                        <span class="fs-5 tooltip-wrapper" 
+                            data-tooltip="Assess and report ESG risks for informed investment decisions">
+                            ESG Risk & Reporting
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Testimonial End -->
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
 
       <!-- Footer Start -->
       <div
@@ -498,4 +469,17 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
   </body>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl, {
+      trigger: 'hover',
+      placement: 'right',
+      offset: [0, 1] // [horizontal, vertical] offset in pixels
+    });
+  });
+});
+
+</script>
 </html>
