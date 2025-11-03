@@ -6,93 +6,40 @@
 }
 
 
-/* Water/Ocean background - YOUR COLOR */
+/* Greenish map theme */
 .svgMap-map-wrapper {
-  background: #D9ECFF !important;
+  background: #e8f5f1 !important;  /* Light greenish background */
 }
 
-/* All countries - Blue-gray with WHITE borders */
+/* All countries - Greenish with WHITE borders */
 .svgMap-country {
-  fill: #7798BA !important;
+  fill: #b8e6d5 !important;  /* Light teal green */
   stroke: #ffffff !important;
   stroke-width: 1.5 !important;
   transition: fill 0.3s ease;
 }
 
-/* Highlighted countries - RED */
-.svgMap-country[data-id="IN"],
-.svgMap-country[data-id="AU"],
-.svgMap-country[data-id="AE"] {
-  fill: #ff450d !important;
-  stroke: #ffffff !important;
-  stroke-width: 2 !important;
-}
-
-/* Hover effect - darker red for highlighted only */
-.svgMap-country[data-id="IN"]:hover,
-.svgMap-country[data-id="AU"]:hover,
-.svgMap-country[data-id="AE"]:hover {
-  fill: #d90001 !important;
-  cursor: pointer !important;
-}
-
-/* NO hover effect for non-highlighted countries */
-.svgMap-country:not([data-id="IN"]):not([data-id="AU"]):not([data-id="AE"]):hover {
-  fill: #7798BA !important;
-  stroke: #ffffff !important;
-  stroke-width: 1.5 !important;
+/* Remove hover effect on countries */
+.svgMap-country:hover {
+  fill: #b8e6d5 !important;
   cursor: default !important;
 }
 
-/* Zoom buttons styling */
-.svgMap-control-button {
-  width: 40px !important;
-  height: 40px !important;
-  background: white !important;
-  border: 2px solid #7798BA !important;
-  border-radius: 8px !important;
-  margin: 5px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-}
-
-.svgMap-control-button:hover {
-  background: #F00001 !important;
-  border-color: #F00001 !important;
-}
-
-.svgMap-control-button::before,
-.svgMap-control-button::after {
-  background: #0E2E50 !important;
-}
-
-.svgMap-control-button:hover::before,
-.svgMap-control-button:hover::after {
-  background: white !important;
-}
-
-/* Tooltip styling */
+/* Hide default tooltips */
 .svgMap-tooltip {
-  background: white !important;
-  border: 3px solid #F00001 !important;
-  border-radius: 12px !important;
-  box-shadow: 0 8px 25px rgba(240, 0, 1, 0.3) !important;
-  padding: 15px 20px !important;
-}
-
-.svgMap-tooltip .svgMap-tooltip-title {
-  color: #F00001 !important;
-  font-size: 18px !important;
-  font-weight: bold !important;
-}
-
-.svgMap-tooltip .svgMap-tooltip-content {
-  color: #0E2E50 !important;
-  font-size: 14px !important;
-}
-
-/* Hide tooltip pointer */
-.svgMap-tooltip-pointer {
   display: none !important;
+}
+
+/* Custom Location Pin Styling */
+.location-pin {
+  cursor: pointer;
+  z-index: 100;
+  transition: transform 0.3s ease;
+  transform-origin: bottom center;
+}
+
+.location-pin:hover {
+  transform: scale(1.4) translate
 }
 
 #spinner {

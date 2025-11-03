@@ -98,28 +98,24 @@
     
 })(jQuery);
 
+// Initialize map with greenish theme
 new svgMap({
   targetElementID: 'svgMap',
   
-  // Color scheme - YOUR REQUIREMENTS
-  colorMax: '#F00001',        // Red for highest values (highlighted regions)
-  colorMin: '#F00001',        // Same red to ensure consistent highlighting
-  colorNoData: '#7798BA',     // Blue-gray for non-highlighted countries
+  // Greenish color scheme
+  colorMax: '#b8e6d5',        // Light green
+  colorMin: '#e8f5f1',        // Very light green
+  colorNoData: '#d4ebe5',     // Pale green for all countries
   
-  // Your operating regions data
+  // Minimal data (we're using custom pins instead)
   data: {
     data: {
       presence: {
-        name: 'Our Presence',
-        format: '{0} Offices',
-        thousandSeparator: ','
+        name: '',
+        format: '',
       }
     },
     applyData: 'presence',
-    values: {
-      IN: {presence: 3, offices: 3, projects: 15, cities: 'Mumbai, Delhi, Bangalore'},  // India
-      AU: {presence: 2, offices: 2, projects: 8, cities: 'Sydney, Melbourne'},          // Australia
-      AE: {presence: 1, offices: 1, projects: 5, cities: 'Dubai'}                       // UAE
-    }
+    values: {}  // Empty - no country coloring
   }
 });
