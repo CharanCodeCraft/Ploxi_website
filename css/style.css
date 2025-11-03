@@ -449,12 +449,13 @@
 
 .team-item:hover::before,
 .team-item:hover::after {
-    background: var(--primary);
+    background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%) !important;
+    transition: 0.5s;
 }
 
 .team-item h5,
 .team-item p {
-    transition: .5s;
+    /* transition: .5s; */
 }
 
 .team-item:hover h5,
@@ -464,7 +465,7 @@
 
 .team-item img {
     padding: 15px;
-    border: 1px solid var(--primary);
+    background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%) !important;
 }
 
 
